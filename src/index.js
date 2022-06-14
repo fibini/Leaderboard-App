@@ -1,4 +1,4 @@
-import "./style.css";
-import {getScore} from "./scores.js";
+import './style.css';
+import getScore from './scores.js';
 
-getScore()
+getScore();
