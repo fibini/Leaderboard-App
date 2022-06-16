@@ -5,6 +5,7 @@ const refresh = document.querySelector('.refresh');
 const submit = document.querySelector('.submit');
 const nameInput = document.getElementById('name');
 const scoreInput = document.getElementById('score');
+const form = document.querySelector('.information')
 
 const newGame = async () => {
   const response = await fetch(
@@ -20,10 +21,8 @@ const newGame = async () => {
     },
   );
   const id = await response.json();
-  return id;
-  // console.log(id)
+    return id;
 };
-newGame();
 
 const sendData = async () => {
   const response = await fetch(
@@ -40,10 +39,12 @@ const sendData = async () => {
     },
   );
   const dataSent = await response.json();
-  return dataSent;
+  //return dataSent;
+  console.log(dataSent)
+  
 };
 
-submit.addEventListener('submit', sendData);
+submit.addEventListener('click', sendData);
 
 const receiveData = async () => {
   const response = await fetch(
@@ -56,8 +57,11 @@ const receiveData = async () => {
     },
   );
   const gameScore = await response.json();
-  getScore(nameInput.value, scoreInput.value);
-  return gameScore;
+  if(nameInput.value){
+    getScore(nameInput.value, scoreInput.value);
+  }
+  form.reset()
+  return gameScore.json;
 };
 
 refresh.addEventListener('click', receiveData);
