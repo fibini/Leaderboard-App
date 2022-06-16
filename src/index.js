@@ -1,65 +1,63 @@
-import "./style.css";
-import getScore from "./scores.js";
+import './style.css';
+import getScore from './scores.js';
 
-const refresh = document.querySelector(".refresh");
-const submit = document.querySelector(".submit");
-const nameInput = document.getElementById("name");
-const scoreInput = document.getElementById("score");
-
+const refresh = document.querySelector('.refresh');
+const submit = document.querySelector('.submit');
+const nameInput = document.getElementById('name');
+const scoreInput = document.getElementById('score');
 
 const newGame = async () => {
   const response = await fetch(
-    "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/",
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',
     {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
-        name: 'chess'
+        name: 'chess',
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        'Content-type': 'application/json; charset=UTF-8',
       },
-    }
+    },
   );
   const id = await response.json();
-  return id
-  //console.log(id)
+  return id;
+  // console.log(id)
 };
-newGame()
+newGame();
 
 const sendData = async () => {
   const response = await fetch(
-    "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/5kwd9qE46jjunPWk6sVg/scores",
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/5kwd9qE46jjunPWk6sVg/scores',
     {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         user: nameInput.value,
         score: scoreInput.value,
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        'Content-type': 'application/json; charset=UTF-8',
       },
-    }
+    },
   );
   const dataSent = await response.json();
   return dataSent;
 };
 
-submit.addEventListener("submit", sendData);
+submit.addEventListener('submit', sendData);
 
 const receiveData = async () => {
   const response = await fetch(
-    "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/5kwd9qE46jjunPWk6sVg/scores",
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/5kwd9qE46jjunPWk6sVg/scores',
     {
-      method: "GET",
+      method: 'GET',
       header: {
-        "Content-type": "application/json; charset=UTF-8",
+        'Content-type': 'application/json; charset=UTF-8',
       },
-    }
-  )
-    const gameScore = await response.json();
-    getScore(nameInput.value, scoreInput.value);
-    return gameScore
-    
+    },
+  );
+  const gameScore = await response.json();
+  getScore(nameInput.value, scoreInput.value);
+  return gameScore;
 };
 
-refresh.addEventListener("click", receiveData);
+refresh.addEventListener('click', receiveData);
