@@ -45,7 +45,7 @@ const sendData = async () => {
 
 submit.addEventListener('submit', (e) => {
   e.preventDefault();
-  sendData()
+  sendData();
 });
 
 const receiveData = async () => {
