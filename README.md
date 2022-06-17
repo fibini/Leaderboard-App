@@ -12,7 +12,7 @@ This project send data to the leaderboad api and get it from the same api to dis
 
 ## Live Demo
 
-[Live Demo Link](https://fibini.github.io/Leaderboard-App/dist/?#)
+[Live Demo Link](https://fibini.github.io/Leaderboard-App/dist/)
 
 
 ## Getting Started

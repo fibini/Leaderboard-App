@@ -5,7 +5,6 @@ const refresh = document.querySelector('.refresh');
 const submit = document.querySelector('.submit');
 const nameInput = document.getElementById('name');
 const scoreInput = document.getElementById('score');
-const form = document.querySelector('.information');
 
 const newGame = async () => {
   const response = await fetch(
@@ -62,7 +61,8 @@ const receiveData = async () => {
   if (nameInput.value) {
     getScore(nameInput.value, scoreInput.value);
   }
-  form.reset();
+  nameInput.value = null;
+  scoreInput.value = null;
   return gameScore.json;
 };
 refresh.addEventListener('click', receiveData);
