@@ -12,7 +12,7 @@ This project send data to the leaderboad api and get it from the same api to dis
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://fibini.github.io/Leaderboard-App/dist)
 
 
 ## Getting Started
@@ -27,8 +27,10 @@ copy the repository from the drop down code menu
 
 ### Install
 clone the repository to your local machine through your code editor using git clone
-
 git clone git@github.com:fibini/Leaderboard-App.git
+> cd Leaderboard
+> npm install
+> code
 
 ## Authors
 
