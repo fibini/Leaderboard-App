@@ -4,7 +4,13 @@
   border: 0;
 }
 
+body {
+  background-image: url(../img/mortalkombat.jpg);
+  background-size: cover;
+}
+
 .heading {
+  color: white;
   font-size: 80px;
   margin-left: 5%;
 }
@@ -16,6 +22,7 @@
 }
 
 .heading-2 {
+  color: white;
   grid-column: 2;
   grid-row: 1;
   display: flex;
@@ -34,23 +41,28 @@
   width: 40%;
 }
 
+.refresh:hover {
+  background-color: #c5aa50;
+}
+
 #leaderboard {
   display: flex;
   flex-direction: column;
   grid-column: 2;
   grid-row: 2;
-  border: 2px solid black;
   padding-left: 5px;
 }
 
 .score-heading {
   display: flex;
+  justify-content: center;
   align-items: center;
   grid-column: 4;
   grid-row: 1;
 }
 
 .add-score {
+  color: white;
   font-size: 30px;
 }
 
@@ -88,6 +100,23 @@
   width: 40%;
 }
 
+.submit:hover {
+  background-color: #c5aa50;
+}
+
 .score-list {
   list-style: none;
+}
+
+.score-list:nth-child(odd) {
+  background-color: lightgrey;
+}
+
+.score-list:nth-child(even) {
+  background-color: white;
+}
+
+.score-slot {
+  color: black;
+  font-size: 20px;
 }

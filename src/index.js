@@ -21,7 +21,6 @@ const newGame = async () => {
   );
   const id = await response.json();
   return id;
-  // console.log(id)
 };
 newGame();
 
@@ -43,7 +42,10 @@ const sendData = async () => {
   return dataSent;
 };
 
-submit.addEventListener('submit', sendData);
+submit.addEventListener('submit', (e) => {
+  e.preventDefault();
+  sendData();
+});
 
 const receiveData = async () => {
   const response = await fetch(
@@ -56,8 +58,11 @@ const receiveData = async () => {
     },
   );
   const gameScore = await response.json();
-  getScore(nameInput.value, scoreInput.value);
-  return gameScore;
+  if (nameInput.value) {
+    getScore(nameInput.value, scoreInput.value);
+  }
+  nameInput.value = null;
+  scoreInput.value = null;
+  return gameScore.json;
 };
-
 refresh.addEventListener('click', receiveData);
