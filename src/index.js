@@ -43,7 +43,10 @@ const sendData = async () => {
   return dataSent;
 };
 
-submit.addEventListener('click', sendData);
+submit.addEventListener('submit', (e) => {
+  e.preventDefault();
+  sendData()
+});
 
 const receiveData = async () => {
   const response = await fetch(
@@ -62,5 +65,4 @@ const receiveData = async () => {
   form.reset();
   return gameScore.json;
 };
-
 refresh.addEventListener('click', receiveData);

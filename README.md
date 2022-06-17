@@ -31,6 +31,7 @@ git clone git@github.com:fibini/Leaderboard-App.git
 > cd Leaderboard
 > npm install
 > code
+> npm start
 
 ## Authors
 
