@@ -1,6 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Leaderboard App
+![leaderboard](https://user-images.githubusercontent.com/96378044/174502355-1c125666-b098-4c0e-abc7-21c2b163c7a3.PNG)
+
 
 This project send data to the leaderboad api and get it from the same api to display the score when the person adds it
 
